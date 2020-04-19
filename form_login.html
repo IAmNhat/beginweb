@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@0;1&display=swap" rel="stylesheet">
+<title>Form Login Css</title>
+<style>
+*{
+	padding:0px;
+	margin:0px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+body{
+	background: url("https://i.gifer.com/76YS.gif") no-repeat center center fixed;
+	background-size: cover;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.block{
+background-color: #dbdbd7;
+height: 600px;
+width: 500px;
+margin: 20px auto;
+border-radius: 2%;
+opacity: 0.8;
+}
+.email1{
+margin-top: 50px;
+outline:none;
+width: 300px;
+height: 40px;
+padding: 3px;
+font-size:20px;
+}
+.password{
+margin-top: 10px;
+outline:none;
+width: 300px;
+height: 40px;
+padding: 3px;
+font-size:20px;
+}
+.email1:focus{
+  outline: 2px solid lightblue;
+}
+.password:focus{
+  outline: 2px solid lightblue;
+}
+.btn{
+margin-top: 20px;
+color:white;
+background-color: #00bf16;
+width:100px;
+height:50px;
+padding: 3px;
+font-size:18px;
+border-radius: 15%;
+transition: 0.4s;
+}
+.btn:hover{
+background-color: #00db19;
+}
+img.avt {
+width: 230px;
+height: 230px;
+object-fit: cover;
+border-radius: 50%;
+margin-top: 50px;
+display: block;
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+function getInfo(){
+var user = document.getElementById("username").value;
+var pass = document.getElementById("password").value;
+if(user == "admin" && pass=="pass"){
+alert("Username: " + user + "\n" + "Password: " + pass);
+} else{
+alert("Login wrong!");
+}
+}
+</script>
+<div class="block">
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Mark_Zuckerberg_F8_2018_Keynote_%28cropped_2%29.jpg" class="avt" />
+
+<form>
+<input type="text" name="username" id="username" class="email1" placeholder="Email"/><br/>
+<input type="password" name="password" id="password" class="password" placeholder="Password"/><br/>
+<button type="submit" class="btn" onclick="getInfo()">Sumit</button>
+</form>
+</center>
+</div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="icon" href="https://cdn.pixabay.com/photo/2012/04/11/11/55/letter-n-27733_960_720.png" type="image/x-icon" />
+	<meta charset="UTF-8">
+	<title>Form Login V2</title>
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<style type="text/css">
+*{
+	margin: 0px;
+	padding: 0px;
+}
+html{
+	background: url('https://technobb.com/wp-content/uploads/2018/06/9cLmr5P.jpg') no-repeat;
+	background-size:cover;
+	font-family: 'Baloo Bhaina 2', cursive;
+	align-items: center;
+	overflow: hidden;
+	z-index: 1;
+	cursor:url("https://i.imgur.com/5v5M8gh.png"), auto;
+
+}
+#container{
+	width:700px;
+	height:500px;
+	background-color:#f7f7f7;
+	margin: 3% auto;
+	border-radius: 2%;
+	opacity: 1;
+	display:block;
+	position:relative;
+-webkit-box-shadow: 0px 0px 19px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 19px -1px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 19px -1px rgba(0,0,0,0.75);
+}
+#styleform{
+	text-align: center;
+	max-width: 100%;
+	opacity:1;
+	z-index: 999;
+display:block;
+
+}
+input{
+background-color:white;
+padding:4px;
+border:1px solid #ccc;
+width:50%;
+height:40px;
+font-size:18px;
+margin-bottom: 30px;
+transition: 0.5s;
+border-radius: 5%;
+outline-style: none;
+	font-family: 'Baloo Bhaina 2', cursive;
+font-weight: 400;
+}
+input:focus{
+	border:1px solid #27bbf5;
+	background-color:#f7f7f7;
+}
+button{
+	height:40px;
+	width:100px;
+	border-radius:10px;
+	background-color: #15a0cf;
+	color:white;
+	font-weight: 500;
+	font-size: 14px;
+	transition: 0.5s;
+}
+button:hover{
+	background-color:#089bcc;
+	    box-shadow: 0 0 0 2px , 0 0 0 3px #089bcc;
+cursor:url("https://i.imgur.com/IXULuQ1.png"), auto;
+
+}
+img{
+	width:100px;
+	height:100px;
+	max-width: 100%;
+	margin: 8% 0 5%;
+
+}
+
+.triangle::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 70px 70px 0 70px;
+  border-color: #f7f7f7 transparent transparent transparent;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+}
+</style>
+<body>
+<div id="container">
+	<form action="" id="styleform">
+		<img src="https://pngimage.net/wp-content/uploads/2018/06/n-logo-png.png" /><br/>
+		<input type="text" name="username" id="username" placeholder="Username"/>
+		<input type="password" name="password" id="password" placeholder="Password"/><br/>
+		<button type="submit" name="submit" onClick="getInfo()">Submit</button><br/>
+	</form>
+	<section class="triangle"></section>
+</div>
+<script type="text/javascript">
+function getInfo(){
+var user = document.getElementById("username").value;
+var pass = document.getElementById("password").value;
+if(user == "admin" && pass=="pass"){
+alert("Username: " + user + "\n" + "Password: " + pass);
+} else{
+alert("Login wrong!");
+}
+}
+</script>
+</body>
+</html>

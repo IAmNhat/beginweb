@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <!-- <style>
+  *{
+  margin:0px;
+  padding:0px;
+  }
+.main{
+text-align:center;
+}
+.block{
+width: 800px;
+height: 400px;
+margin: 10px auto;
+border: 5px solid black;
+display:block;
+}
+.block img{
+width: 800px;
+height: 400px;
+max-width:100%;
+max-height:100%;
+object-fit:cover;
+}
+input{
+padding: 10px;
+}
+</style>
+  </head>
+<body>
+<script>
+var imgList = new Array();
+imgList = ["https://www.w3schools.com/w3css/img_lights.jpg",
+"https://upload.wikimedia.org/wikipedia/commons/6/63/The_Aurora_Borealis_or_Northern_Lights_shine_above_Bear_Lake_in_Alaska_050910-F-MS415-009.jpg",
+"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+"https://thumbs.dreamstime.com/z/tropical-leaves-colorful-flower-dark-foliage-nature-background-green-127468955.jpg",
+"https://i0.wp.com/3.bp.blogspot.com/-rCMfYshdc7E/T_XoejnVJjI/AAAAAAAAA30/oXCYXpGLl-A/s1600/night_fantasy_art_704.jpg",
+"https://i.pinimg.com/originals/c5/6b/7e/c56b7ee5a59924b06786da6aad386a94.jpg",
+"https://image.shutterstock.com/image-photo/bright-spring-view-cameo-island-260nw-1048185397.jpg"
+]
+function random(){
+var index = Math.floor(Math.random()*imgList.length);
+var result = '<img src="' + imgList[index] + '" />';
+document.getElementById("block").innerHTML = result;
+}
+</script>
+<div class="main">
+<input type="button" value="random" onclick="random()"/>
+<div class="block" id="block">
+  </div></div> -->
+  <div>
+    <img id="slider" src="https://raw.githubusercontent.com/ichte/Planets-Android-Learning/master/earth.jpg">
+    <button onclick="prev()"> Ảnh trước </button>
+    <button onclick="next()"> Ảnh sau </button>
+	    <button onclick="random()"> Random </button>
+
+</div>
+
+<script>
+    var images = [
+        "https://raw.githubusercontent.com/ichte/Planets-Android-Learning/master/earth.jpg",
+        "https://raw.githubusercontent.com/ichte/Planets-Android-Learning/master/jupiter.jpg",
+        "https://raw.githubusercontent.com/ichte/Planets-Android-Learning/master/neptune.jpg"
+    ];
+    var num = 0;
+
+    function next() {
+        var slider = document.getElementById("slider");
+        num++;
+        if(num >= images.length) {
+            num = 0;
+        }
+        slider.src = images[num];
+    }
+
+    function prev() {
+        var slider = document.getElementById("slider");
+        num--;
+        if(num < 0) {
+            num = images.length-1;
+        }
+        slider.src = images[num];
+    }
+	function random(){
+	    var slider = document.getElementById("slider");
+		num = Math.floor(Math.random()*images.length);
+		slider.src= images[num];
+
+	}
+</script>
+</body>
+
+</html>

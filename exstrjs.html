@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.4.0/css/uikit-core-rtl.min.css" />
+	<meta charset="UTF-8">
+	<title>Exercises String JS</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.4.0/js/components/countdown.min.js" integrity="sha256-VEzZyBD0z7xImLTFuUrmu2RvhLtGIZgMG7Qq9Hn8tbE=" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="uk-navbar-container uk-margin" uk-navbar="mode: click">
+    <div class="uk-navbar-left">
+
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="#">Active</a></li>
+            <li>
+                <a href="#">Parent</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Item</a></li>
+        </ul>
+
+    </div>
+</nav>
+<form>
+<center>
+
+    <input class="uk-input uk-width-1-2" type="text" placeholder="Input string" id="instr"><br/>
+    <p uk-margin>
+    <button type="button" class="uk-button uk-button-primary" onclick="getStr()">Primary</button>
+    <br/>
+    <br/>
+    <hr>
+    <span class="uk-label">Độ dài chuỗi</span><br/>
+    <input class="uk-input uk-width-1-2" type="text" placeholder="uk-width-1-2" value="Result" id="lengthstr" disabled><br/>
+    <span class="uk-label">Xóa bỏ khoảng trắng</span><br/>
+    <input class="uk-input uk-width-1-2" type="text" placeholder="uk-width-1-2" value="Result" id="outstr" disabled><br/>
+        <span class="uk-label">Tìm từ có kí tự dài nhất</span><br/>
+    <input class="uk-input uk-width-1-2" type="text" placeholder="uk-width-1-2" value="Result" id="findword" disabled><br/>
+</p>
+
+</center>
+</form>
+	<script type="text/javascript">
+function getStr(){
+	var inputstr = new String();
+inputstr = document.getElementById('instr').value;
+str = inputstr.replace(/\s+/g, ' ');
+var newStr = str.trim();
+document.getElementById('outstr').value = newStr;
+document.getElementById('lengthstr').value = newStr.length;
+var arrWord = newStr.split(' ');
+var sortStr = arrWord.sort(function(a, b){
+  return b.length - a.length;
+});
+newSortStr = sortStr.filter(function(item){
+  return item.length==sortStr[0].length;
+});
+document.getElementById('findword').value = newSortStr;
+
+}
+</script>
+</body>
+</html>
