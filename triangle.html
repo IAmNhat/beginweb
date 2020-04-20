@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="icon" href="https://www.onlygfx.com/wp-content/uploads/2018/04/grunge-triangle-1-1024x940.png" type="image/x-icon" />
+
+	<meta charset="UTF-8">
+	<title>Half Triangle</title>
+</head>
+<body>
+	<script>
+/*
+       *     
+      **     
+     ***
+    ****
+   *****
+  ******
+ *******
+********
+*/	
+for(var i=1;i<=9;i++){
+	var space ='';
+	for(var j=1;j<=9-i;j++){
+     space += '&nbsp;&nbsp;';
+	}
+	var sao = '';
+	for(var k=1;k<=i;k++){
+     sao += '*';
+	}
+document.write(space + sao + '<br/>');
+}
+document.write('------------------------' + '<br/>');
+/*
+********
+ *******
+  ******
+   *****
+    ****
+     ***
+      **
+       *
+*/
+for(var a=0;a<=9;a++){
+	var space ='';
+for(var b=0;b<=a;b++){
+space += '&nbsp;&nbsp;';
+}
+var dausao = '';
+for(var c=9;c>b;c--){
+	dausao += '*';
+}
+document.write(space + dausao + '<br/>');
+}
+	</script>
+</body>
+</html>
